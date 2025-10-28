@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CorpGovData - Your comprehensive source for publicly available corporate and government data in Canada. Access business registries, corporate information, and public records.">
+    <meta name="keywords" content="Canadian corporate data, government data Canada, business registry, public records, corporate information, company search Canada">
+    <meta name="author" content="CorpGovData">
+    <meta property="og:title" content="CorpGovData - Canadian Corporate & Government Data">
+    <meta property="og:description" content="Comprehensive database for publicly available corporate and government information in Canada.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://corpgovdata.com">
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
+    
+    <title>CorpGovData - Canadian Corporate & Government Data Database | Coming Soon</title>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CorpGovData",
+      "description": "Canadian Corporate and Government Data Database",
+      "url": "https://corpgovdata.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://corpgovdata.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+        
+        .coming-soon {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #000;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+        
+        .content-section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            padding: 2rem;
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        
+        .feature:hover {
+            border-color: #666;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        input, textarea {
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #666;
+        }
+        
+        button {
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+        
+        .terms-section {
+            margin-top: 2rem;
+        }
+        
+        .terms-section h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">CorpGovData</div>
+            <ul>
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#about" onclick="showPage('about')">About</a></li>
+                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#support" onclick="showPage('support')">Support</a></li>
+                <li><a href="#terms" onclick="showPage('terms')">Terms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>CorpGovData</h1>
+                <p class="subtitle">Your Gateway to Canadian Corporate & Government Data</p>
+                <div class="coming-soon">COMING SOON</div>
+                <p style="color: #888;">Comprehensive database for publicly available information in Canada</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page hidden">
+        <section class="content-section">
+            <div class="container">
+                <h2>About CorpGovData</h2>
+                <p>CorpGovData is Canada's premier destination for accessing comprehensive corporate and government data. We aggregate publicly available information from multiple sources to provide businesses, researchers, and individuals with streamlined access to critical Canadian data.</p>
+                
+                <p>Our platform serves as a centralized hub for corporate registries, business information, government records, and public databases across all Canadian provinces and territories. We believe in transparency and accessibility, making essential information available to everyone who needs it.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h3>Comprehensive Coverage</h3>
+                        <p>Access data from federal, provincial, and territorial databases all in one place.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Always Updated</h3>
+                        <p>Our databases are regularly refreshed to ensure you have the most current information.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Easy Search</h3>
+                        <p>Powerful search tools to quickly find the corporate and government data you need.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Verified Sources</h3>
+                        <p>All data comes from official government sources and public registries.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 3rem;">Whether you're conducting due diligence, researching business opportunities, or need access to public records, CorpGovData provides the tools and information you need to make informed decisions.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page hidden">
+        <section class="content-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions about CorpGovData? We'd love to hear from you. Fill out the form below and our team will get back to you as soon as possible.</p>
+                
+                <form onsubmit="return handleSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                
+                <div style="margin-top: 3rem;">
+                    <h3>Other Ways to Reach Us</h3>
+                    <p><strong>Email:</strong> info@corpgovdata.com</p>
+                    <p><strong>Business Inquiries:</strong> business@corpgovdata.com</p>
+                    <p><strong>Support:</strong> support@corpgovdata.com</p>
+                    <p style="margin-top: 1rem;">We typically respond to all inquiries within 24-48 business hours.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SUPPORT PAGE -->
+    <div id="support" class="page hidden">
+        <section class="content-section">
+            <div class="container">
+                <h2>Support Center</h2>
+                <p>Welcome to the CorpGovData Support Center. We're here to help you get the most out of our platform.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h3>Getting Started</h3>
+                        <p>Learn how to navigate CorpGovData and access the information you need.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Search Tips</h3>
+                        <p>Discover advanced search techniques to find exactly what you're looking for.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Data Sources</h3>
+                        <p>Understand where our data comes from and how it's verified.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>API Access</h3>
+                        <p>Information about accessing our data programmatically.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <h3>Frequently Asked Questions</h3>
+                    <p><strong>Q: Is CorpGovData free to use?</strong><br>
+                    A: We offer both free and premium tiers. Basic access to public records is free, while advanced features require a subscription.</p>
+                    
+                    <p><strong>Q: How often is the data updated?</strong><br>
+                    A: Our databases are updated daily to reflect the latest publicly available information from government sources.</p>
+                    
+                    <p><strong>Q: What types of data can I access?</strong><br>
+                    A: You can access corporate registrations, business names, director information, annual filings, and various government records from across Canada.</p>
+                    
+                    <p><strong>Q: Is the data legally obtained?</strong><br>
+                    A: Yes. All data on CorpGovData comes from publicly available government sources and official registries.</p>
+                </div>
+                
+                <p style="margin-top: 2rem;">Need more help? <a href="#contact" onclick="showPage('contact')" style="color: #fff; text-decoration: underline;">Contact our support team</a>.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- TERMS PAGE -->
+    <div id="terms" class="page hidden">
+        <section class="content-section">
+            <div class="container">
+                <h2>Terms and Conditions</h2>
+                <p><em>Last Updated: October 2025</em></p>
+                
+                <div class="terms-section">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing and using CorpGovData, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our service.</p>
+                    
+                    <h3>2. Use License</h3>
+                    <p>Permission is granted to temporarily access the materials on CorpGovData for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                    <p>• Modify or copy the materials<br>
+                    • Use the materials for any commercial purpose<br>
+                    • Attempt to decompile or reverse engineer any software contained on CorpGovData<br>
+                    • Remove any copyright or other proprietary notations from the materials</p>
+                    
+                    <h3>3. Data Accuracy</h3>
+                    <p>While we strive to ensure the accuracy of all information provided, CorpGovData makes no warranties about the completeness, reliability, or accuracy of the data. All data is provided "as is" from publicly available sources.</p>
+                    
+                    <h3>4. Privacy Policy</h3>
+                    <p>Your privacy is important to us. CorpGovData collects and uses personal information in accordance with Canadian privacy laws including PIPEDA. We do not sell or share your personal information with third parties except as necessary to provide our services.</p>
+                    
+                    <h3>5. User Conduct</h3>
+                    <p>You agree not to use CorpGovData to:</p>
+                    <p>• Violate any applicable laws or regulations<br>
+                    • Transmit any harmful or malicious code<br>
+                    • Attempt to gain unauthorized access to our systems<br>
+                    • Scrape or harvest data in violation of our terms<br>
+                    • Interfere with other users' access to the service</p>
+                    
+                    <h3>6. Intellectual Property</h3>
+                    <p>The service and its original content, features, and functionality are owned by CorpGovData and are protected by international copyright, trademark, and other intellectual property laws. Public data remains in the public domain.</p>
+                    
+                    <h3>7. Limitation of Liability</h3>
+                    <p>CorpGovData shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the service.</p>
+                    
+                    <h3>8. Modifications</h3>
+                    <p>CorpGovData reserves the right to modify these terms at any time. Continued use of the service after changes constitutes acceptance of the modified terms.</p>
+                    
+                    <h3>9. Governing Law</h3>
+                    <p>These terms shall be governed by and construed in accordance with the laws of Canada, without regard to its conflict of law provisions.</p>
+                    
+                    <h3>10. Contact Information</h3>
+                    <p>Questions about the Terms and Conditions should be sent to us at legal@corpgovdata.com.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CorpGovData. All rights reserved. | <a href="#terms" onclick="showPage('terms')" style="color: #666;">Terms & Conditions</a></p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+            return false;
+        }
+        
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            e.target.reset();
+            return false;
+        }
+        
+        // Handle navigation highlighting
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('nav a').forEach(l => l.style.opacity = '0.7');
+                this.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
